@@ -19,6 +19,9 @@ const AddPostForm = ({ close }) => {
     const actualUser = useDecodedSession();
     console.log(actualUser)
 
+    // const isAdmin = 'admin'
+    // const users = 'user'
+
     const onChangeHandleFile = (e) => {
         //sempre uguale per upload singolo
         setFile(e.target.files[0])
@@ -122,6 +125,25 @@ const AddPostForm = ({ close }) => {
                         </select>}
                     </div>
                     {/* FINE SCELTA UTENTE */}
+
+                    {/* {actualUser && isAdmin && (
+                        <select
+                            className="text-black rounded mb-2 p-2 border w-100"
+                            name='author'
+                            onChange={(e) => setFormData({
+                                ...formData,
+                                author: e.target.value,
+                            })
+                            }
+                        >
+                            <option>Seleziona l'uente</option>
+                            {users.users && users.users.map((item) => {
+                                return (
+                                    <option key={item._id} value={item._id}>{item.userName}</option>
+                                )
+                            })}
+                        </select>
+                    )} avrei preferito questa soluzione ma non funziona*/}
 
                     <select
                         type="number"
